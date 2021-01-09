@@ -1,0 +1,115 @@
+[
+    {
+        "id": "20a332d5.82aa6e",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b770ac06.90e8d",
+        "type": "mqtt in",
+        "z": "20a332d5.82aa6e",
+        "name": "Record Number",
+        "topic": "esp3223rr324564t456g/stat/recno",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "207dae44.9243b2",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "c0670d66.beb0b"
+            ]
+        ]
+    },
+    {
+        "id": "c0670d66.beb0b",
+        "type": "ui_text",
+        "z": "20a332d5.82aa6e",
+        "group": "d0e9d347.7c835",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Record Value",
+        "label": "Record Value",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 340,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8f124bce.26a408",
+        "type": "mqtt in",
+        "z": "20a332d5.82aa6e",
+        "name": "Device Connection",
+        "topic": "esp3223rr324564t456g/test/stat",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "207dae44.9243b2",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "c16fe826.a8c738"
+            ]
+        ]
+    },
+    {
+        "id": "c16fe826.a8c738",
+        "type": "ui_text",
+        "z": "20a332d5.82aa6e",
+        "group": "d0e9d347.7c835",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Status",
+        "label": "Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 310,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "207dae44.9243b2",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org/",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "d0e9d347.7c835",
+        "type": "ui_group",
+        "name": "Test",
+        "tab": "f8a34050.d5231",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "f8a34050.d5231",
+        "type": "ui_tab",
+        "name": "Test Tab",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
